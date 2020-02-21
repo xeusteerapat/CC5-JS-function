@@ -3,10 +3,14 @@ let myName = prompt("My name is: "),
   myHeight = +prompt("My Height is: "),
   yourName = prompt("Your name is: "),
   yourWeight = +prompt("Your Weight is: "),
-  yourHeight = +prompt("My Height is: ");
+  yourHeight = +prompt("Your Height is: ");
 
 function calBMI(w, h) {
-  return h / w ** 2;
+  return w / (h / 100) ** 2;
+}
+
+function printName(name, BMI) {
+  alert(`${name} BMI: ${BMI}`);
 }
 
 function checkValid(w1, w2, h1, h2) {
@@ -15,8 +19,8 @@ function checkValid(w1, w2, h1, h2) {
     return;
   }
   return calBMI(myWeight, myHeight) > calBMI(yourWeight, yourHeight)
-    ? alert(`${myName}'s BMI is more than ${yourName}`)
-    : alert(`${yourName}'s BMI is more than ${myName}`);
+    ? printName(myName, calBMI(myWeight, myHeight))
+    : printName(yourName, calBMI(yourWeight, yourHeight));
 }
 
 checkValid(myWeight, myHeight, yourWeight, yourHeight);
