@@ -7,7 +7,7 @@ while (a !== null) {
     max = a;
     console.log(max);
     console.log(a);
-  } else if (!a) break;
+  } else if (a === null) break;
 }
 
 alert(max);

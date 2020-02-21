@@ -9,10 +9,10 @@ while (a !== null) {
     max = a;
   } else if (a > secondMax && a !== max) {
     secondMax = a;
-  } else if (!a) break;
-  console.log(max);
-  console.log(secondMax);
-  console.log(a);
+  } else if (a === null) break;
+  console.log("Maximum number: ", max);
+  console.log("Second maximum number: ", secondMax);
+  console.log("Input number: ", a);
 }
 
 alert(`Max num is ${max} and secondMax is ${secondMax}`);
